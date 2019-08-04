@@ -1,6 +1,5 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const tokenfile = require("./auth.json");
 const cheerio = require("cheerio");
 const request = require("request");
 // Configure logger settings
