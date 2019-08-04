@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const cheerio = require("cheerio");
 const request = require("request");
+var bad = ["fuck", "shit", "bitch", "whore", "ugly", "cunt", "stupid"];
 // Configure logger settings
 
 
@@ -14,15 +15,27 @@ bot.on('ready', async () => {
 
 bot.login(process.env.token);
 var x=0;
+var counter=0;
 bot.on("message", async message => {
     // Our bot needs to know if it will execute a command
     // It will listen for messages that will start with `!`
+	for (i=0;i<bad.length;i++){
+		if (message.author.bot) return;
+		if (message.content.includes(bad[i])){
+			counter=1;
+		}
+	}
+	if (counter==1){
+		message.channel.send("Stop swearing bitch");
+		counter=0;
+	}
 	if ((message.content.includes("chunbot stop")||message.content.includes("Chunbot stop")) && x==0){
 		if (message.author.bot) return;
 		message.channel.send("fine");
 		message.channel.send("HOES MAD :sunglasses: ");
 		x=1;
 	}
+	
 	else if ((message.content.includes("chunbot search")||message.content.includes("Chunbot search")) && x==0){
 		if (message.author.bot) return;
 		var parts=message.content.split(" ");
