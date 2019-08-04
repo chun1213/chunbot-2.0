@@ -21,7 +21,7 @@ bot.on("message", async message => {
     // It will listen for messages that will start with `!`
 	for (i=0;i<bad.length;i++){
 		if (message.author.bot) return;
-		if (message.content.includes(bad[i])){
+		if ((message.content.toLowerCase()).includes(bad[i])){
 			counter=1;
 		}
 	}
