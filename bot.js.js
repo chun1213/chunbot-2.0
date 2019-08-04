@@ -9,6 +9,7 @@ const request = require("request");
 const bot = new Discord.Client({disableEveryone: true});
 bot.on('ready', async () => {
     console.log(`${bot.user.username} is online!`)
+	bot.user.setActivity("Roblox");
 });
 
 bot.login(process.env.token);
