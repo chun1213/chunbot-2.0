@@ -20,6 +20,7 @@ bot.on("message", async message => {
     // Our bot needs to know if it will execute a command
     // It will listen for messages that will start with `!`
 	var mess=message.content.toLowerCase();
+	var rand=~~(Math.random() * 3);
 	if (x==0){	
 		for (i=0;i<bad.length;i++){
 			if (message.author.bot) return;
@@ -53,7 +54,15 @@ bot.on("message", async message => {
 	}
 	else if ((mess.includes("league")) && x==0) {
 		if (message.author.bot) return;
-		message.channel.send("League is gay lol");
+		if (rand==1){
+        message.channel.send("League is gay lol");
+		}
+		if (rand==2){
+        message.channel.send("GLORY TO SHURIMA");
+		}
+		if (rand==3){
+        message.channel.send("I call dibs Yumi support");
+		}
 	}
 	else if ((mess.includes("creeper")) && x==0) {
 		if (message.author.bot) return;
@@ -61,8 +70,22 @@ bot.on("message", async message => {
 	}
     else if (mess.includes("chunbot")&&x==0) {
 		if (message.author.bot) return;
-		message.channel.send("heard you called", {files: ["./images/sans.png"]});
+		if (rand==1){
+        message.channel.send("heard you called", {files: ["./images/sans.png"]});
+		}
+		if (rand==2){
+        word="Sans undertale";
+		image(message,word);
+		message.channel.send("sup");
+		}
+		if (rand==2){
+        word="Kirby";
+		image(message,word);
+		message.channel.send("Hi!");
+		}
+		
 	}
+	
 	else if (mess.includes("chunbot")&& x==1){
 		message.channel.send("Im BACK!", {files: ["./images/minion.jpg"]});
 		x=0;
@@ -75,8 +98,15 @@ bot.on("message", async message => {
 	else if (mess.includes("chun")&& x==0) {
         
 		if (message.author.bot) return;
+		if (rand==1){
         message.channel.send("fake news libtard");
-	
+		}
+		else if (rand==2){
+        message.channel.send("Shut up");
+		}
+		if (rand==3){
+        message.channel.send("fucking hell just @ him");
+		}
         
     }
 	else if ((message.content.substring(0, 2) == '-p') && x==0) {
@@ -88,9 +118,19 @@ bot.on("message", async message => {
 	
 	else if (mess.includes("crystal")&&x==0){
 		if (message.author.bot) return;
+		if (rand==1){
 		word="bald";
 		image(message,word);
 		message.channel.send("Error 404 hairline not found");
+		}
+		else if (rand==2){
+		message.channel.send("NO");
+		}
+		else if (rand==3){
+		word="crystal";
+		image(message,word);
+		message.channel.send("");
+		}
 	}
 });
 
