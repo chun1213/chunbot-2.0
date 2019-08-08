@@ -19,24 +19,27 @@ var counter=0;
 bot.on("message", async message => {
     // Our bot needs to know if it will execute a command
     // It will listen for messages that will start with `!`
-	for (i=0;i<bad.length;i++){
-		if (message.author.bot) return;
-		if (((message.content).toLowerCase()).includes(bad[i])){
-			counter=1;
+	var mess=message.content.toLowerCase();
+	if (x==0){	
+		for (i=0;i<bad.length;i++){
+			if (message.author.bot) return;
+			if (mess.includes(bad[i])){
+				counter=1;
+			}
+		}
+		if (counter >=1){
+			message.channel.send("Stop swearing bitch");
+			counter=0;
 		}
 	}
-	if (counter==1){
-		message.channel.send("Stop swearing bitch");
-		counter=0;
-	}
-	if ((message.content.includes("chunbot stop")||message.content.includes("Chunbot stop")) && x==0){
+	if (mess.includes("chunbot stop")&& x==0){
 		if (message.author.bot) return;
 		message.channel.send("fine");
 		message.channel.send("HOES MAD :sunglasses: ");
 		x=1;
 	}
 	
-	else if ((message.content.includes("chunbot search")||message.content.includes("Chunbot search")) && x==0){
+	else if (mess.includes("chunbot search")&& x==0){
 		if (message.author.bot) return;
 		var parts=message.content.split(" ");
 		word=parts.slice(1).join(" ");
@@ -44,48 +47,37 @@ bot.on("message", async message => {
 		return;
 		
 	}
-	else if ((message.content.includes("chunbot help")||message.content.includes("Chunbot help")) && x==0) {
+	else if (mess.includes("chunbot help") && x==0) {
 		if (message.author.bot) return;
 		message.channel.send("Did you honestly think I would put a help menu, figure the commands out libtard :Soviet: ");
 	}
-	else if ((message.content.includes("League")||message.content.includes("league")) && x==0) {
+	else if ((mess.includes("league")) && x==0) {
 		if (message.author.bot) return;
 		message.channel.send("League is gay lol");
 	}
-	else if ((message.content.includes("Creeper")||message.content.includes("creeper")) && x==0) {
+	else if ((mess.includes("creeper")) && x==0) {
 		if (message.author.bot) return;
 		message.channel.send("AW MAN");
 	}
-    else if ((message.content.includes("chunbot")||message.content.includes("Chunbot")) &&x==0) {
+    else if (mess.includes("chunbot")&&x==0) {
 		if (message.author.bot) return;
 		message.channel.send("heard you called", {files: ["./images/sans.png"]});
 	}
-	else if ((message.content.includes("chunbot")||message.content.includes("Chunbot")) && x==1){
+	else if (mess.includes("chunbot")&& x==1){
 		message.channel.send("Im BACK!", {files: ["./images/minion.jpg"]});
 		x=0;
 	}
-	else if ((message.content.includes("OwO")||message.content.includes("owo")) && x==0) {
+	else if (mess.includes("owo") && x==0) {
 		if (message.author.bot) return;
 		message.channel.send("notices bulge OwO whats this? Rawr x3 nuzzles how are you pounces on you you're so warm o3o notices you have a bulge o: someone's happy ;) ");
 	}
 	
-	else if ((message.content.includes("chun")||message.content.includes("Chun")) && x==0) {
-        // var args = message.substring(1).split(' ');
-        // var cmd = args[0];
+	else if (mess.includes("chun")&& x==0) {
+        
 		if (message.author.bot) return;
         message.channel.send("fake news libtard");
 	
-        // args = args.splice(1);
-        // switch(cmd) {
-            //!ping
-            // case 'ping':
-                // bot.sendMessage({
-                    // to: channelID,
-                    // message: 'Pong!'
-                // });
-            //break;
-            // Just add any case commands if you want to..
-         //}
+        
     }
 	else if ((message.content.substring(0, 2) == '-p') && x==0) {
 		if (message.author.bot) return;
@@ -94,7 +86,7 @@ bot.on("message", async message => {
 	
 	}
 	
-	else if ((message.content.includes("crystal")||message.content.includes("Crystal"))&&x==0){
+	else if (mess.includes("crystal")&&x==0){
 		if (message.author.bot) return;
 		word="bald";
 		image(message,word);
