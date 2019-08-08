@@ -60,7 +60,7 @@ bot.on("message", async message => {
 		if (rand==2){
         message.channel.send("GLORY TO SHURIMA");
 		}
-		if (rand==3){
+		if (rand==0){
         message.channel.send("I call dibs Yumi support");
 		}
 	}
@@ -78,7 +78,7 @@ bot.on("message", async message => {
 		image(message,word);
 		message.channel.send("sup");
 		}
-		if (rand==2){
+		if (rand==0){
         word="Kirby";
 		image(message,word);
 		message.channel.send("Hi!");
@@ -104,7 +104,7 @@ bot.on("message", async message => {
 		else if (rand==2){
         message.channel.send("Shut up");
 		}
-		if (rand==3){
+		if (rand==0){
         message.channel.send("fucking hell just @ him");
 		}
         
@@ -126,10 +126,10 @@ bot.on("message", async message => {
 		else if (rand==2){
 		message.channel.send("NO");
 		}
-		else if (rand==3){
+		else if (rand==0){
 		word="crystal";
 		image(message,word);
-		message.channel.send("");
+		message.channel.send(" ");
 		}
 	}
 });
