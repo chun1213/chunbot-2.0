@@ -52,6 +52,10 @@ bot.on("message", async message => {
 		if (message.author.bot) return;
 		message.channel.send("Did you honestly think I would put a help menu, figure the commands out libtard :Soviet: ");
 	}
+	else if (mess.includes("chunbot eula")&&x==0) {
+	if (message.author.bot) return;
+	message.channel.send("Chun is not reponsible for the actions and or negative effects/side-effects of chunbot");
+	}
 	else if ((mess.includes("league")) && x==0) {
 		if (message.author.bot) return;
 		if (rand==1){
@@ -132,6 +136,12 @@ bot.on("message", async message => {
 		message.channel.send(" ");
 		}
 	}
+	else if (mess.includes("yannik")&&x==0){
+		if (message.author.bot) return;
+		message.channel.send("Did someone mention a retarded ape monkey with anger management issues who never learned how to walk properly?");
+		message.channel.send("OOGA BOOGA");
+	}
+	
 });
 
 function image(message){
