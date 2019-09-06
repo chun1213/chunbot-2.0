@@ -102,6 +102,8 @@ bot.on("message", async message => {
 	else if (mess.includes("chun")&& x==0) {
         
 		if (message.author.bot) return;
+		message.channel.send("Li Ch'un-feng) (602–670) was a Chinese mathematician, astronomer, historian, and politician who was born in today's Baoji, Shaanxi during the Sui and Tang dynasties. He was first appointed to the Imperial Astronomy Bureau to help institute a calendar reform. He eventually ascended to deputy of the Imperial Astronomy Bureau and designed the Linde calendar. His father was an educated state official and also a Taoist. Li died in Chang'an in 670. ");
+		/*
 		if (rand==1){
         message.channel.send("fake news libtard");
 		}
@@ -111,6 +113,7 @@ bot.on("message", async message => {
 		if (rand==0){
         message.channel.send("fucking hell just @ him");
 		}
+		*/
         
     }
 	else if ((message.content.substring(0, 2) == '-p') && x==0) {
