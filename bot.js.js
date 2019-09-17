@@ -58,7 +58,7 @@ bot.on("message", async message => {
 	}
 	else if ((mess.includes("league")) && x==0) {
 		if (message.author.bot) return;
-		var rand=~~(Math.random() * 5);
+		var rand=~~(Math.random() * 6);
 		if (rand==1){
         message.channel.send("League is gay lol");
 		}
@@ -73,6 +73,11 @@ bot.on("message", async message => {
 		}
 		if (rand==4){
         message.channel.send("I put the ASS in ASSassin!");
+		}
+		if (rand==5){
+        message.channel.send("Garumi isn’t real. It can’t hurt you.");
+		message.channel.send("Garumi: De-meowcia intensifies");
+		message.channel.send( {files: ["./images/Garenyuumi.jpg"]});
 		}
 	}
 	else if ((mess.includes("creeper")) && x==0) {
