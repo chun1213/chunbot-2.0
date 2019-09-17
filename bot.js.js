@@ -77,7 +77,7 @@ bot.on("message", async message => {
 		if (rand==5){
         message.channel.send("Garumi isn’t real. It can’t hurt you.");
 		message.channel.send("Garumi: De-meowcia intensifies");
-		message.channel.send( {files: ["./images/Garenyuumi.jpg"]});
+		message.channel.send( "",{files: ["./images/Garenyuumi.jpg"]});
 		}
 	}
 	else if ((mess.includes("creeper")) && x==0) {
