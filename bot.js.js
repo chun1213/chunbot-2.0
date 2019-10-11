@@ -10,7 +10,7 @@ var bad = ["fuck", "shit", "bitch", "whore", "ugly", "cunt", "stupid"];
 const bot = new Discord.Client({disableEveryone: true});
 bot.on('ready', async () => {
     console.log(`${bot.user.username} is online!`)
-	bot.user.setActivity("Roblox");
+	bot.user.setActivity("With Myself");
 });
 
 bot.login(process.env.token);
@@ -160,7 +160,38 @@ bot.on("message", async message => {
 		message.channel.send("Did someone mention a retarded ape monkey with anger management issues who never learned how to walk properly?");
 		message.channel.send("OOGA BOOGA");
 	}
-	
+	else if (mess.includes("aidan")&&x==0){
+		if (message.author.bot) return;
+		if (rand==0){
+		message.channel.send("Literally inting");
+		}
+		else if (rand==1){
+		message.channel.send("DID SOMEONE MENTION OUR UNDISPUTED MALE CAPTAIN?!");
+		word="asian man";
+		image(message,word);
+		}
+		else if (rand==2){
+		message.channel.send("Chun kinda looks like you with glasses Lmao");
+		}
+	else if (mess.includes("chunbot quote")&&x==0){
+		if (message.author.bot) return;
+		var rand=~~(Math.random() * 10);
+		var list = [
+		"\"Rich people dont have friends, they have assets\" -Chunfeng",
+		"\"there's no way he[rob ford] ges reelected\" -Julian",
+		"\"When I was young, my mom dropped my on me head\" -Georgi",
+		"\"Obama's Last name is care\" -Chunfeng",
+		"\"u dumb piece of shit darius u mist ur auto attack, because u were blinded! i have got u now\" -Julian",
+		"\"Love you John\" -Crystal",
+		"\"I'm not a woamn beater but I wanna beat one\" -Denniz",
+		"\"Im out here sucking dick\" -Yannik",
+		"\"Hitting woman should be legalized\" -Yannik",
+		"\"So you see Comrad\" -Chunfeng",
+		"\"Tell that lazy libtard to suck my bean and get on for league\" -Julian"
+
+		];
+		message.channel.send(list[rand]);
+	}	
 });
 
 function image(message){
