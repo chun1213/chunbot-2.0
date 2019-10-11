@@ -173,6 +173,7 @@ bot.on("message", async message => {
 		else if (rand==2){
 		message.channel.send("Chun kinda looks like you with glasses Lmao");
 		}
+	}
 	else if (mess.includes("chunbot quote")&&x==0){
 		if (message.author.bot) return;
 		var rand=~~(Math.random() * 10);
