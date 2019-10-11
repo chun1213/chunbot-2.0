@@ -84,6 +84,25 @@ bot.on("message", async message => {
 		if (message.author.bot) return;
 		message.channel.send("AW MAN");
 	}
+	else if (mess.includes("chunbot quote")&&x==0){
+		if (message.author.bot) return;
+		var rand=~~(Math.random() * 10);
+		var list = [
+		"\"Rich people dont have friends, they have assets\" -Chunfeng",
+		"\"there's no way he[rob ford] ges reelected\" -Julian",
+		"\"When I was young, my mom dropped my on me head\" -Georgi",
+		"\"Obama's Last name is care\" -Chunfeng",
+		"\"u dumb piece of shit darius u mist ur auto attack, because u were blinded! i have got u now\" -Julian",
+		"\"Love you John\" -Crystal",
+		"\"I'm not a woamn beater but I wanna beat one\" -Denniz",
+		"\"Im out here sucking dick\" -Yannik",
+		"\"Hitting woman should be legalized\" -Yannik",
+		"\"So you see Comrad\" -Chunfeng",
+		"\"Tell that lazy libtard to suck my bean and get on for league\" -Julian"
+
+		];
+		message.channel.send(list[rand]);
+	}	
     else if (mess.includes("chunbot")&&x==0) {
 		if (message.author.bot) return;
 		var rand=~~(Math.random() * 4);
@@ -174,25 +193,7 @@ bot.on("message", async message => {
 		message.channel.send("Chun kinda looks like you with glasses Lmao");
 		}
 	}
-	else if (mess.includes("chunbot quote")&&x==0){
-		if (message.author.bot) return;
-		var rand=~~(Math.random() * 10);
-		var list = [
-		"\"Rich people dont have friends, they have assets\" -Chunfeng",
-		"\"there's no way he[rob ford] ges reelected\" -Julian",
-		"\"When I was young, my mom dropped my on me head\" -Georgi",
-		"\"Obama's Last name is care\" -Chunfeng",
-		"\"u dumb piece of shit darius u mist ur auto attack, because u were blinded! i have got u now\" -Julian",
-		"\"Love you John\" -Crystal",
-		"\"I'm not a woamn beater but I wanna beat one\" -Denniz",
-		"\"Im out here sucking dick\" -Yannik",
-		"\"Hitting woman should be legalized\" -Yannik",
-		"\"So you see Comrad\" -Chunfeng",
-		"\"Tell that lazy libtard to suck my bean and get on for league\" -Julian"
-
-		];
-		message.channel.send(list[rand]);
-	}	
+	
 });
 
 function image(message){
