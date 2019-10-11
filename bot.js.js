@@ -34,6 +34,7 @@ bot.on("message", async message => {
 		}
 	}
 	if (mess.includes("chunbot update")&& x==0){
+		if (message.author.bot) return;
 		message.channel.send("Welcome to the October update for Chunbot!");
 		message.channel.send("Get ready for some spoopy stuff!");
 		message.channel.send("New features include:");
@@ -93,7 +94,7 @@ bot.on("message", async message => {
 	}
 	else if (mess.includes("chunbot quote")&&x==0){
 		if (message.author.bot) return;
-		var rand=~~(Math.random() * 10);
+		var rand=~~(Math.random() * 11);
 		var list = [
 		"\"Rich people dont have friends, they have assets\" -Chunfeng",
 		"\"There's no way he[rob ford] ges reelected\" -Julian",
