@@ -40,7 +40,7 @@ bot.on("message", async message => {
 		message.channel.send("-Quotes!");
 		message.channel.send("-Aidan is now supported!");
 	}
-	if (mess.includes("chunbot stop")&& x==0){
+	else if (mess.includes("chunbot stop")&& x==0){
 		if (message.author.bot) return;
 		message.channel.send("fine");
 		message.channel.send("HOES MAD :sunglasses: ");
