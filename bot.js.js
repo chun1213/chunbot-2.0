@@ -129,7 +129,7 @@ bot.on("message", async message => {
 		
 		
 	}
-	var rand1=~~(Math.random() * 2);
+	var rand1=~~(Math.random() * 3);
 	if (rand1 ==0){
 		
 		if ((mess.includes("league")) && x==0) {
