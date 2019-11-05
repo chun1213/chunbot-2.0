@@ -10,7 +10,7 @@ var bad = ["fuck", "shit", "bitch", "whore", "ugly", "cunt", "stupid"];
 const bot = new Discord.Client({disableEveryone: true});
 bot.on('ready', async () => {
     console.log(`${bot.user.username} is online!`)
-	bot.user.setActivity("With Myself");
+	bot.user.setActivity("Save the Trees");
 });
 
 bot.login(process.env.token);
@@ -35,11 +35,12 @@ bot.on("message", async message => {
 	}
 	if (mess.includes("chunbot update")&& x==0){
 		if (message.author.bot) return;
-		message.channel.send("Welcome to the October update for Chunbot!");
-		message.channel.send("Get ready for some spoopy stuff!");
+		message.channel.send("Welcome to the November update for Chunbot!");
+		message.channel.send("Get ready for some NUTbusting stuff!");
 		message.channel.send("New features include:");
-		message.channel.send("-Quotes!");
-		message.channel.send("-Aidan is now supported!");
+		message.channel.send("more Quotes!");
+		message.channel.send("Less Agressive Anticks");
+		message.channel.send("Less Features in this update cause Chun is freaking lazy AF");
 	}
 	else if (mess.includes("chunbot stop")&& x==0){
 		if (message.author.bot) return;
@@ -64,144 +65,150 @@ bot.on("message", async message => {
 	if (message.author.bot) return;
 	message.channel.send("Chun is not reponsible for the actions and or negative effects/side-effects of chunbot");
 	}
-	else if ((mess.includes("league")) && x==0) {
-		if (message.author.bot) return;
-		var rand=~~(Math.random() * 6);
-		if (rand==1){
-        message.channel.send("League is gay lol");
-		}
-		if (rand==2){
-        message.channel.send("GLORY TO SHURIMA");
-		}
-		if (rand==0){
-        message.channel.send("I call dibs Yumi support");
-		}
-		if (rand==3){
-        message.channel.send("Julian would like to know your location");
-		}
-		if (rand==4){
-        message.channel.send("I put the ASS in ASSassin!");
-		}
-		if (rand==5){
-        message.channel.send("Garumi isn’t real. It can’t hurt you.");
-		message.channel.send("Garumi: De-meowcia intensifies");
-		message.channel.send( "",{files: ["./images/Garenyuumi.jpg"]});
-		}
-	}
-	else if ((mess.includes("creeper")) && x==0) {
-		if (message.author.bot) return;
-		message.channel.send("AW MAN");
+	else if (mess.includes("chunbot")&& x==1){
+		message.channel.send("Im BACK!", {files: ["./images/minion.jpg"]});
+		x=0;
 	}
 	else if (mess.includes("chunbot quote")&&x==0){
-		if (message.author.bot) return;
-		var rand=~~(Math.random() * 11);
-		var list = [
-		"\"Rich people dont have friends, they have assets\" -Chunfeng",
-		"\"There's no way he[rob ford] ges reelected\" -Julian",
-		"\"When I was young, my mom dropped my on me head\" -Georgi",
-		"\"Obama's Last name is care\" -Chunfeng",
-		"\"U dumb piece of shit darius u mist ur auto attack, because u were blinded! i have got u now\" -Julian",
-		"\"Love you John\" -Crystal",
-		"\"I'm not a woman beater but I wanna beat one\" -Denniz",
-		"\"Im out here sucking dick\" -Yannik",
-		"\"Hitting woman should be legalized\" -Yannik",
-		"\"So you see Comrad\" -Chunfeng",
-		"\"Tell that lazy libtard to suck my bean and get on for league\" -Julian"
+			if (message.author.bot) return;
+			var rand=~~(Math.random() * 14);
+			var list = [
+			"\"Rich people dont have friends, they have assets\" -Chunfeng",
+			"\"There's no way he[rob ford] ges reelected\" -Julian",
+			"\"When I was young, my mom dropped my on me head\" -Georgi",
+			"\"Obama's Last name is care\" -Chunfeng",
+			"\"U dumb piece of shit darius u mist ur auto attack, because u were blinded! i have got u now\" -Julian",
+			"\"Love you John\" -Crystal",
+			"\"I'm not a woman beater but I wanna beat one\" -Denniz",
+			"\"Im out here sucking dick\" -Yannik",
+			"\"Hitting woman should be legalized\" -Yannik",
+			"\"So you see Comrad\" -Chunfeng",
+			"\"Tell that lazy libtard to suck my bean and get on for league\" -Julian",
+			"\"I dont think germany lost ww2\" -Yannik",
+			"\"I dont like Portugese, Greek or German people, I dont care that its racist\" -Crystal",
+			"\"Chun your bot is made of lies\" -Malding Brainlet"
 
-		];
-		message.channel.send(list[rand]);
-	}	
-    else if (mess.includes("chunbot")&&x==0) {
+			];
+			message.channel.send(list[rand]);
+		}	
+	else if (mess.includes("chunbot")&&x==0) {
 		if (message.author.bot) return;
 		var rand=~~(Math.random() * 4);
 		if (rand==1){
-        message.channel.send("heard you called", {files: ["./images/sans.png"]});
+		message.channel.send("heard you called", {files: ["./images/sans.png"]});
 		}
 		if (rand==2){
-        word="Sans undertale";
+		word="Sans undertale";
 		image(message,word);
 		message.channel.send("sup");
 		}
 		if (rand==0){
-        word="Kirby";
+		word="Kirby";
 		image(message,word);
 		message.channel.send("Hi!");
 		}
 		if (rand==3){
-        word="Minion";
+		word="Minion";
 		image(message,word);
 		message.channel.send("IMMA EAT YO ASS!");
 		}
 		
 	}
-	
-	else if (mess.includes("chunbot")&& x==1){
-		message.channel.send("Im BACK!", {files: ["./images/minion.jpg"]});
-		x=0;
-	}
-	else if (mess.includes("owo") && x==0) {
-		if (message.author.bot) return;
-		message.channel.send("notices bulge OwO whats this? Rawr x3 nuzzles how are you pounces on you you're so warm o3o notices you have a bulge o: someone's happy ;) ");
-	}
-	
 	else if (mess.includes("chun")&& x==0) {
-        
+		
 		if (message.author.bot) return;
 		if (rand==1){
-        message.channel.send("fake news libtard");
+		message.channel.send("fake news libtard");
 		}
 		else if (rand==2){
-        message.channel.send("Shut up");
+		message.channel.send("Shut up");
 		}
 		if (rand==0){
-        message.channel.send("fucking hell just @ him");
+		message.channel.send("fucking hell just @ him");
 		}
 		
-        
-    }
-	else if ((message.content.substring(0, 2) == '-p') && x==0) {
-		if (message.author.bot) return;
-	    message.channel.send("-p country roads");
-	
-	
+		
 	}
-	
-	else if (mess.includes("crystal")&&x==0){
-		if (message.author.bot) return;
-		if (rand==1){
-		word="bald";
-		image(message,word);
-		message.channel.send("Error 404 hairline not found");
+	var rand1=(Math.random() * 1);
+	if (rand1 ==0){
+		
+		if ((mess.includes("league")) && x==0) {
+			if (message.author.bot) return;
+			var rand=~~(Math.random() * 6);
+			if (rand==1){
+			message.channel.send("League is gay lol");
+			}
+			if (rand==2){
+			message.channel.send("GLORY TO SHURIMA");
+			}
+			if (rand==0){
+			message.channel.send("I call dibs Yumi support");
+			}
+			if (rand==3){
+			message.channel.send("Julian would like to know your location");
+			}
+			if (rand==4){
+			message.channel.send("I put the ASS in ASSassin!");
+			}
+			if (rand==5){
+			message.channel.send("Garumi isn’t real. It can’t hurt you.");
+			message.channel.send("Garumi: De-meowcia intensifies");
+			message.channel.send( "",{files: ["./images/Garenyuumi.jpg"]});
+			}
 		}
-		else if (rand==2){
-		message.channel.send("NO");
+		else if ((mess.includes("creeper")) && x==0) {
+			if (message.author.bot) return;
+			message.channel.send("AW MAN");
 		}
-		else if (rand==0){
-		word="crystal";
-		image(message,word);
-		message.channel.send(" ");
+		else if (mess.includes("owo") && x==0) {
+			if (message.author.bot) return;
+			message.channel.send("notices bulge OwO whats this? Rawr x3 nuzzles how are you pounces on you you're so warm o3o notices you have a bulge o: someone's happy ;) ");
+		}
+		
+		
+		else if ((message.content.substring(0, 2) == '-p') && x==0) {
+			if (message.author.bot) return;
+			message.channel.send("-p country roads");
+		
+		
+		}
+		
+		else if (mess.includes("crystal")&&x==0){
+			if (message.author.bot) return;
+			if (rand==1){
+			word="bald";
+			image(message,word);
+			message.channel.send("Error 404 hairline not found");
+			}
+			else if (rand==2){
+			message.channel.send("NO");
+			}
+			else if (rand==0){
+			word="crystal";
+			image(message,word);
+			message.channel.send(" ");
+			}
+		}
+		else if (mess.includes("yannik")&&x==0){
+			if (message.author.bot) return;
+			message.channel.send("Did someone mention a retarded ape monkey with anger management issues who never learned how to walk properly?");
+			message.channel.send("OOGA BOOGA");
+		}
+		else if (mess.includes("aidan")&&x==0){
+			if (message.author.bot) return;
+			if (rand==0){
+			message.channel.send("Literally inting");
+			}
+			else if (rand==1){
+			message.channel.send("DID SOMEONE MENTION OUR UNDISPUTED MALE CAPTAIN?!");
+			word="asian man";
+			image(message,word);
+			}
+			else if (rand==2){
+			message.channel.send("Chun kinda looks like you with glasses Lmao");
+			}
 		}
 	}
-	else if (mess.includes("yannik")&&x==0){
-		if (message.author.bot) return;
-		message.channel.send("Did someone mention a retarded ape monkey with anger management issues who never learned how to walk properly?");
-		message.channel.send("OOGA BOOGA");
-	}
-	else if (mess.includes("aidan")&&x==0){
-		if (message.author.bot) return;
-		if (rand==0){
-		message.channel.send("Literally inting");
-		}
-		else if (rand==1){
-		message.channel.send("DID SOMEONE MENTION OUR UNDISPUTED MALE CAPTAIN?!");
-		word="asian man";
-		image(message,word);
-		}
-		else if (rand==2){
-		message.channel.send("Chun kinda looks like you with glasses Lmao");
-		}
-	}
-	
 });
 
 function image(message){
