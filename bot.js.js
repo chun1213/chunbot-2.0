@@ -222,6 +222,7 @@ bot.on("message", async message => {
 		stop(message, serverQueue);
 		return;
 	}
+	/*
 	async function execute(message, serverQueue) {
 	const args = message.content.split(' ');
 
@@ -267,7 +268,7 @@ bot.on("message", async message => {
 		return message.channel.send(`${song.title} has been added to the queue!`);
 	}
 
-}
+} */
 
 function skip(message, serverQueue) {
 	if (!message.member.voiceChannel) return message.channel.send('You have to be in a voice channel to stop the music!');
