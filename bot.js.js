@@ -215,7 +215,7 @@ bot.on("message", async message => {
 	    if (message.member.voiceChannel) {
 	        if (!message.guild.voiceChannel) {
 	            message.member.voiceChannel.join();
-	            message.channel.send("Chun kinda looks like you with glasses Lmao");
+	            message.channel.send("Ok Captain");
 	        }
 	    }
 	}
