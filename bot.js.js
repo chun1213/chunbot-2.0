@@ -4,7 +4,7 @@ const cheerio = require("cheerio");
 const request = require("request");
 var bad = ["fuck", "shit", "bitch", "whore", "ugly", "cunt", "stupid"];
 // Configure logger settings
-
+// chunbot 2.5
 
 // Initialize Discord Bot
 const bot = new Discord.Client({disableEveryone: true});
@@ -35,12 +35,12 @@ bot.on("message", async message => {
 	}
 	if (mess.includes("chunbot update")&& x==0){
 		if (message.author.bot) return;
-		message.channel.send("Welcome to the November update for Chunbot!");
-		message.channel.send("Get ready for some NUTbusting stuff!");
+		message.channel.send("Welcome to the December update for Chunbot!");
+		message.channel.send("Get ready for Christmas!");
 		message.channel.send("New features include:");
 		message.channel.send("more Quotes!");
-		message.channel.send("Less Agressive Anticks");
-		message.channel.send("Less Features in this update cause Chun is freaking lazy AF");
+		message.channel.send("University memes");
+		message.channel.send("The Christmas Spirit");
 	}
 	else if (mess.includes("chunbot stop")&& x==0){
 		if (message.author.bot) return;
@@ -71,7 +71,7 @@ bot.on("message", async message => {
 	}
 	else if (mess.includes("chunbot quote")&&x==0){
 			if (message.author.bot) return;
-			var rand=~~(Math.random() * 14);
+			var rand=~~(Math.random() * 15);
 			var list = [
 			"\"Rich people dont have friends, they have assets\" -Chunfeng",
 			"\"There's no way he[rob ford] ges reelected\" -Julian",
@@ -86,7 +86,8 @@ bot.on("message", async message => {
 			"\"Tell that lazy libtard to suck my bean and get on for league\" -Julian",
 			"\"I dont think germany lost ww2\" -Yannik",
 			"\"I dont like Portugese, Greek or German people, I dont care that its racist\" -Crystal",
-			"\"Chun your bot is made of lies\" -Malding Brainlet"
+			"\"Chun your bot is made of lies\" -Malding Brainlet",
+			"\"all my friends are going from little bitches to thot destroyers wtf"
 
 			];
 			message.channel.send(list[rand]);
