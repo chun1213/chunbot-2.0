@@ -213,12 +213,8 @@ bot.on("message", async message => {
 	if (mess.includes("chub")){
 	    if (message.member.voiceChannel) {
 	        if (!message.guild.me.voiceChannel) {
-	            message.member.voiceChannel.join()
-                .then(connection => {message.channel.send("feseseffe");
-                }).catch(e => {
-                    // This error isn't being thrown when the bot joins.
-                    conmessage.channel.send("no");
-                });
+	            message.member.voiceChannel.join();
+	            message.channel.send("DID SOMEONE MENTION OUR UNDISPUTED MALE CAPTAIN?!");
 	            
 	        }
 	    }
