@@ -214,7 +214,7 @@ bot.on("message", async message => {
 	    if (message.member.voiceChannel) {
 	        if (!message.guild.me.voiceChannel) {
 	            message.member.voiceChannel.join();
-	            message.channel.send("DID SOMEONE MENTION OUR UNDISPUTED MALE CAPTAIN?!");
+	            message.channel.send(message.guild.me.voiceChannel);
 	            
 	        }
 	    }
