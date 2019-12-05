@@ -213,9 +213,7 @@ bot.on("message", async message => {
 	if (mess.includes("chub")){
 	    if (message.member.voiceChannel) {
 	        if (!message.guild.voiceChannel) {
-	            let VoiceChannel = client.channels.get('305146733044957196')
-	            VoiceChannel.join();
-	            
+	            message.member.voiceChannel.join();
 	        }
 	    }
 	}
