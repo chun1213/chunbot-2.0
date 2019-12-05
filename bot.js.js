@@ -211,9 +211,9 @@ bot.on("message", async message => {
 		}
 	}
 	if (mess.includes("chub")){
-	    if (message.member.voice.channel) {
-	        if (!message.guild.voice.channel) {
-	            message.member.voice.channel.join();
+	    if (message.member.voiceChannel) {
+	        if (!message.guild.voiceChannel) {
+	            message.member.voiceChannel.join();
 	            message.channel.send("nice");
 	            
 	        }
