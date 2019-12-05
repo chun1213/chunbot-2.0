@@ -214,6 +214,7 @@ bot.on("message", async message => {
 		if (message.member.voiceChannel){
 			if (!message.guild.voiceConnection){
 				message.member.voiceChannel.join();
+				message.channel.send("feseseffe");
 			}
 		}
 	}
