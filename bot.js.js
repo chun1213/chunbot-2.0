@@ -263,5 +263,3 @@ function image(message){
     });
  
 }
-
-	
