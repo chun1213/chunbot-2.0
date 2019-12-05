@@ -211,10 +211,10 @@ bot.on("message", async message => {
 		}
 	}
 	if (mess.includes("chub")){
-	    if (message.member.voiceChannel) {
-	        if (!message.guild.voiceChannel) {
-	            message.member.voiceChannel.connect();
-	            message.channel.send(message.member.voiceChannel);
+	    if (message.member.voice.channel) {
+	        if (!message.guild.voice.channel) {
+	            message.member.voice.channel.join();
+	            message.channel.send("nice");
 	            
 	        }
 	    }
