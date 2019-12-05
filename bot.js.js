@@ -210,19 +210,25 @@ bot.on("message", async message => {
 			}
 		}
 	}
-	
-});
-
-async run(message, args){
 	if (mess.includes("chub")){
-	    if (message.member.voiceChannel){
-	        if (!message.guild.voiceConnection){
-	            message.member.voiceChannel.join();
-	            message.channel.send("feseseffe");
+	    if (message.member.voiceChannel) {
+	        if (!message.guild.me.voiceChannel) {
+	            message.member.voiceChannel.join()
+                .then(connection => {message.channel.send("feseseffe");
+                }).catch(e => {
+                    // This error isn't being thrown when the bot joins.
+                    conmessage.channel.send("no");
+                });
+	            
 	        }
 	    }
 	}
-}
+	
+});
+
+
+	
+
 
 function image(message){
 	var search=word;
