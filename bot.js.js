@@ -2,6 +2,11 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const cheerio = require("cheerio");
 const request = require("request");
+const {
+	prefix,
+	token,
+} = require('./config.json');
+const ytdl = require('ytdl-core');
 var bad = ["fuck", "shit", "bitch", "whore", "ugly", "cunt", "stupid"];
 // Configure logger settings
 
