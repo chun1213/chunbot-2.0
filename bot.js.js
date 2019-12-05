@@ -213,7 +213,7 @@ bot.on("message", async message => {
 	
 });
 
-function async run(message, args){
+async run(message, args){
 	if (mess.includes("chub")){
 	    if (message.member.voiceChannel){
 	        if (!message.guild.voiceConnection){
