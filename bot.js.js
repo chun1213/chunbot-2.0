@@ -3,20 +3,21 @@ const client = new Discord.Client();
 const cheerio = require("cheerio");
 const request = require("request");
 var bad = ["fuck", "shit", "bitch", "whore", "ugly", "cunt", "stupid"];
+
 // Configure logger settings
-// chunbot 2.5
+
 
 // Initialize Discord Bot
 const bot = new Discord.Client({disableEveryone: true});
 bot.on('ready', async () => {
     console.log(`${bot.user.username} is online!`)
-	bot.user.setActivity("Save the Trees");
 });
 
 bot.login(process.env.token);
 var x=0;
 var counter=0;
 bot.on("message", async message => {
+	console.log('logged in');
     // Our bot needs to know if it will execute a command
     // It will listen for messages that will start with `!`
 	var mess=message.content.toLowerCase();
@@ -214,6 +215,7 @@ bot.on("message", async message => {
 	    if (message.member.voiceChannel) {
 	        if (!message.guild.voiceChannel) {
 	            message.member.voiceChannel.join();
+	            message.channel.send("Chun kinda looks like you with glasses Lmao");
 	        }
 	    }
 	}
@@ -261,4 +263,5 @@ function image(message){
     });
  
 }
+
 	
