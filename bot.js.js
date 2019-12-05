@@ -88,7 +88,7 @@ bot.on("message", async message => {
 			"\"I dont think germany lost ww2\" -Yannik",
 			"\"I dont like Portugese, Greek or German people, I dont care that its racist\" -Crystal",
 			"\"Chun your bot is made of lies\" -Malding Brainlet",
-			"\"all my friends are going from little bitches to thot destroyers wtf"
+			"\"all my friends are going from little bitches to thot destroyers wtf\" -Julian"
 
 			];
 			message.channel.send(list[rand]);
@@ -218,6 +218,9 @@ bot.on("message", async message => {
 	            message.channel.send("Ok Captain");
 	        }
 	    }
+		else{
+			message.channel.send("I'm being bullied");
+		}
 	}
 	
 });
