@@ -210,15 +210,19 @@ bot.on("message", async message => {
 			}
 		}
 	}
-	if (mess.includes("chub")){
-		if (message.member.voiceChannel){
-			if (!message.guild.voiceConnection){
-				message.member.voiceChannel.join();
-				message.channel.send("feseseffe");
-			}
-		}
-	}
+	
 });
+
+function async run(message, args){
+	if (mess.includes("chub")){
+	    if (message.member.voiceChannel){
+	        if (!message.guild.voiceConnection){
+	            message.member.voiceChannel.join();
+	            message.channel.send("feseseffe");
+	        }
+	    }
+	}
+}
 
 function image(message){
 	var search=word;
