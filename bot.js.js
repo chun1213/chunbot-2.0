@@ -40,8 +40,8 @@ bot.on("message", async message => {
 		message.channel.send("Get ready for Christmas!");
 		message.channel.send("New features include:");
 		message.channel.send("more Quotes!");
-		message.channel.send("University memes");
 		message.channel.send("The Christmas Spirit");
+		message.channel.send("MUSIC!");
 	}
 	else if (mess.includes("chunbot stop")&& x==0){
 		if (message.author.bot) return;
@@ -211,21 +211,46 @@ bot.on("message", async message => {
 			}
 		}
 	}
-	if (mess.includes("chub")){
+	if (mess.includes("taysway")){
 	    if (message.member.voiceChannel) {
 	        if (!message.guild.voiceChannel) {
-	            message.member.voiceChannel.join();
-	            message.channel.send("Ok Captain");
+	            message.member.voiceChannel.join()
+				.then(connection =>{
+					playlist = ["https://www.youtube.com/watch?v=8xg3vE8Ie_E", "https://www.youtube.com/watch?v=e-ORhEE9VVg", "https://www.youtube.com/watch?v=VuNIsY6JdUw", "https://www.youtube.com/watch?v=nN6VR92V70M", "https://www.youtube.com/watch?v=7F37r50VUTQ"];
+					shuffleArray(playlist);
+					Play(connection);
+				})
 	        }
 	    }
-		else{
-			message.channel.send("I'm being bullied");
-		}
 	}
 	
 });
 
-
+function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+}
+function Play(connection){
+	connection.playStream(YTDL(playlist[0])).on("end",function(){
+		playlist.shift();
+		
+		console.log("beans");
+		if (playlist[0]){
+			Play(connection);
+		}
+		else{
+			connection.disconnect();
+			
+		}	
+		
+		
+	})
+	
+}
 	
 
 
