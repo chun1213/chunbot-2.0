@@ -3,7 +3,6 @@ const client = new Discord.Client();
 const cheerio = require("cheerio");
 const request = require("request");
 const YTDL = require("ytdl-core"); 
-const fs = require('fs');
 var bad = ["fuck", "shit", "bitch", "whore", "ugly", "cunt", "stupid"];
 var playlist = ["https://www.youtube.com/watch?v=8xg3vE8Ie_E", "https://www.youtube.com/watch?v=e-ORhEE9VVg", "https://www.youtube.com/watch?v=VuNIsY6JdUw", "https://www.youtube.com/watch?v=nN6VR92V70M", "https://www.youtube.com/watch?v=7F37r50VUTQ"];
 // Configure logger settings
@@ -71,6 +70,12 @@ bot.on("message", async message => {
 	else if (mess.includes("chunbot")&& x==1){
 		message.channel.send("Im BACK!", {files: ["./images/minion.jpg"]});
 		x=0;
+	}
+	else if (mess.includes("chunbot threaten")&& x==0){
+		var mention= message.mentions.users.first();
+		mention.send("Nigga");
+	
+	
 	}
 	else if (mess.includes("chunbot quote")&&x==0){
 			if (message.author.bot) return;
