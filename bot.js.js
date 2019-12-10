@@ -73,7 +73,7 @@ bot.on("message", async message => {
 	}
 	else if (mess.includes("chunbot threaten")&& x==0){
 		var mention= message.mentions.users.first();
-		mention.send("Nigga");
+		mention.send("WHERE MY BEANS FAM?");
 	
 	
 	}
