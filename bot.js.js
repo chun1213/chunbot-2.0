@@ -231,6 +231,10 @@ bot.on("message", async message => {
 	    }
 	}
 	
+	if (mess.includes("christmas")){
+		if (message.author.bot) return;
+			message.channel.send("Merry Christmas Bois!");
+	}
 });
 
 function shuffleArray(array) {
