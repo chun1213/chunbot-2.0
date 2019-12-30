@@ -41,7 +41,7 @@ bot.on("message", async message => {
 		message.channel.send("Get ready for New YEARS! and to make some NEW resolutions!");
 		message.channel.send("New features include:");
 		message.channel.send("more Quotes!");
-		message.channel.send("Better MUSIC!");
+		message.channel.send("Better MUSIC! now with URLS");
 		message.channel.send("Crippling Anxiety!");
 	}
 	else if (mess.includes("chunbot stop")&& x==0){
@@ -238,20 +238,32 @@ bot.on("message", async message => {
 	        if (!message.guild.voiceChannel) {
 	            message.member.voiceChannel.join()
 				.then(connection =>{
+					
 					var parts=message.content.split(" ");
-					word=parts.slice(1);
+					var word=parts.slice(1).toString();
 					playlist.push(word);
-					Play(connection);
+					if (playlist.length==1){
+						Play(connection);
+					}
 				})
 	        }
 	    }
 	}
 	
-	if (mess.includes("christmas")){
-		if (message.author.bot) return;
-			message.channel.send("Merry Christmas Bois!");
+	if (mess.includes("-list")){
+	   var playliststr= playlist.toString();
+	   message.channel.send(playliststr);
 	}
-});
+	
+	if (mess.includes("-re")){
+		 if (message.member.voiceChannel) {
+		var parts=message.content.split(" ");
+		var word=parts.slice(1);
+			if (word>=2){
+				playlist.splice(word-1);
+			}
+		}
+	}
 
 function shuffleArray(array) {
     for (var i = array.length - 1; i > 0; i--) {
