@@ -4,7 +4,7 @@ const cheerio = require("cheerio");
 const request = require("request");
 const YTDL = require("ytdl-core"); 
 var bad = ["fuck", "shit", "bitch", "whore", "ugly", "cunt", "stupid"];
-var playlist = ["https://www.youtube.com/watch?v=8xg3vE8Ie_E", "https://www.youtube.com/watch?v=e-ORhEE9VVg", "https://www.youtube.com/watch?v=VuNIsY6JdUw", "https://www.youtube.com/watch?v=nN6VR92V70M", "https://www.youtube.com/watch?v=7F37r50VUTQ"];
+var playlist = [];
 // Configure logger settings
 
 
@@ -37,12 +37,12 @@ bot.on("message", async message => {
 	}
 	if (mess.includes("chunbot update")&& x==0){
 		if (message.author.bot) return;
-		message.channel.send("Welcome to the December update for Chunbot!");
-		message.channel.send("Get ready for Christmas!");
+		message.channel.send("Welcome to the January update for Chunbot!");
+		message.channel.send("Get ready for New YEARS! and to make some NEW resolutions!");
 		message.channel.send("New features include:");
 		message.channel.send("more Quotes!");
-		message.channel.send("The Christmas Spirit");
-		message.channel.send("MUSIC!");
+		message.channel.send("Better MUSIC!");
+		message.channel.send("Crippling Anxiety!");
 	}
 	else if (mess.includes("chunbot stop")&& x==0){
 		if (message.author.bot) return;
@@ -79,7 +79,7 @@ bot.on("message", async message => {
 	}
 	else if (mess.includes("chunbot quote")&&x==0){
 			if (message.author.bot) return;
-			var rand=~~(Math.random() * 15);
+			var rand=~~(Math.random() * 18);
 			var list = [
 			"\"Rich people dont have friends, they have assets\" -Chunfeng",
 			"\"There's no way he[rob ford] ges reelected\" -Julian",
@@ -95,7 +95,10 @@ bot.on("message", async message => {
 			"\"I dont think germany lost ww2\" -Yannik",
 			"\"I dont like Portugese, Greek or German people, I dont care that its racist\" -Crystal",
 			"\"Chun your bot is made of lies\" -Malding Brainlet",
-			"\"all my friends are going from little bitches to thot destroyers wtf\" -Julian"
+			"\"All my friends are going from little bitches to thot destroyers wtf\" -Julian",
+			"\"Have you looked at his abs? I would smash pantheon\" -Chunfeng",
+			"\"Vladimir would suck your period blood\" -Chunfeng",
+			"\"I would smash Xin Zhao\" -Crystal"
 
 			];
 			message.channel.send(list[rand]);
@@ -218,13 +221,26 @@ bot.on("message", async message => {
 			}
 		}
 	}
-	if (mess.includes("taysway")){
+	// if (mess.includes("taysway")){
+	    // if (message.member.voiceChannel) {
+	        // if (!message.guild.voiceChannel) {
+	            // message.member.voiceChannel.join()
+				// .then(connection =>{
+					// playlist = ["https://www.youtube.com/watch?v=8xg3vE8Ie_E", "https://www.youtube.com/watch?v=e-ORhEE9VVg", "https://www.youtube.com/watch?v=VuNIsY6JdUw", "https://www.youtube.com/watch?v=nN6VR92V70M", "https://www.youtube.com/watch?v=7F37r50VUTQ"];
+					// shuffleArray(playlist);
+					// Play(connection);
+				// })
+	        // }
+	    // }
+	// }
+	if (mess.includes("-cb")){
 	    if (message.member.voiceChannel) {
 	        if (!message.guild.voiceChannel) {
 	            message.member.voiceChannel.join()
 				.then(connection =>{
-					playlist = ["https://www.youtube.com/watch?v=8xg3vE8Ie_E", "https://www.youtube.com/watch?v=e-ORhEE9VVg", "https://www.youtube.com/watch?v=VuNIsY6JdUw", "https://www.youtube.com/watch?v=nN6VR92V70M", "https://www.youtube.com/watch?v=7F37r50VUTQ"];
-					shuffleArray(playlist);
+					var parts=message.content.split(" ");
+					word=parts.slice(1);
+					playlist.push(word);
 					Play(connection);
 				})
 	        }
