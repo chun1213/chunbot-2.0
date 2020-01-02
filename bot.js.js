@@ -249,6 +249,10 @@ bot.on("message", async message => {
 	        }
 	    }
 	}
+	if (mess.includes("-bye")){
+	   connection.disconnect();
+	   playlist=[];
+	}
 	
 	if (mess.includes("-list")){
 	   var playliststr= playlist.toString();
