@@ -264,7 +264,7 @@ bot.on("message", async message => {
 		var parts=message.content.split(" ");
 		var word=parts.slice(1);
 			if (word>=2){
-				playlist.splice(word-1);
+				playlist.splice(word-1,1);
 			}
 		}
 	}
