@@ -249,10 +249,10 @@ bot.on("message", async message => {
 	        }
 	    }
 	}
-	if (mess.includes("-bye")){
-	   message.member.voiceChannel.disconnect();
-	   playlist=[];
-	}
+	// if (mess.includes("-bye")){
+	   // message.member.voiceChannel.disconnect();
+	   // playlist=[];
+	// }
 	
 	if (mess.includes("-list")){
 	   var playliststr= playlist.toString();
@@ -278,7 +278,7 @@ function shuffleArray(array) {
     }
 }
 function Play(connection){
-	connection.playStream(YTDL(playlist[0])).on("end",function(){
+	connection.playStream(YTDL(playlist[0], {filter: "audioonly"})).on("end",function(){
 		playlist.shift();
 		
 		console.log("beans");
