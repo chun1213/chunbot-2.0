@@ -256,8 +256,7 @@ bot.on("message", async message => {
 	
 	if (mess.includes("-list")){
 	   var playliststr= playlist.toString();
-	   playliststr.replace(/,/g, " ");
-	   message.channel.send(playliststr);
+	   message.channel.send(playliststr.replace(/,/g, " "));
 	}
 	
 	if (mess.includes("-re")){
