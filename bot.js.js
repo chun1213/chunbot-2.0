@@ -250,7 +250,7 @@ bot.on("message", async message => {
 	    }
 	}
 	if (mess.includes("-bye")){
-	   connection.disconnect();
+	   message.member.voiceChannel.disconnect();
 	   playlist=[];
 	}
 	
