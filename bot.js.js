@@ -37,12 +37,12 @@ bot.on("message", async message => {
 	}
 	if (mess.includes("chunbot update")&& x==0){
 		if (message.author.bot) return;
-		message.channel.send("Welcome to the January update for Chunbot!");
-		message.channel.send("Get ready for New YEARS! and to make some NEW resolutions!");
+		message.channel.send("Welcome to the Febuary update for Chunbot!");
+		message.channel.send("Valentines day is cool is guess");
 		message.channel.send("New features include:");
 		message.channel.send("more Quotes!");
-		message.channel.send("Better MUSIC! now with URLS");
-		message.channel.send("Crippling Anxiety!");
+		//message.channel.send("Matchmaking!");
+		message.channel.send("Chun's being a lazy bitch so this not a big update");
 	}
 	else if (mess.includes("chunbot stop")&& x==0){
 		if (message.author.bot) return;
@@ -79,7 +79,7 @@ bot.on("message", async message => {
 	}
 	else if (mess.includes("chunbot quote")&&x==0){
 			if (message.author.bot) return;
-			var rand=~~(Math.random() * 18);
+			var rand=~~(Math.random() * 20);
 			var list = [
 			"\"Rich people dont have friends, they have assets\" -Chunfeng",
 			"\"There's no way he[rob ford] ges reelected\" -Julian",
@@ -98,8 +98,9 @@ bot.on("message", async message => {
 			"\"All my friends are going from little bitches to thot destroyers wtf\" -Julian",
 			"\"Have you looked at his abs? I would smash pantheon\" -Chunfeng",
 			"\"Vladimir would suck your period blood\" -Chunfeng",
-			"\"I would smash Xin Zhao\" -Crystal"
-
+			"\"I would smash Xin Zhao\" -Crystal",
+			"\"I would smash, if [Julian] was a girl\” - Shashank",
+			"\“Julian's my wife\” - Shashank"
 			];
 			message.channel.send(list[rand]);
 		}	
@@ -205,6 +206,10 @@ bot.on("message", async message => {
 			if (message.author.bot) return;
 			message.channel.send("Did someone mention a retarded ape monkey with anger management issues who never learned how to walk properly?");
 			message.channel.send("OOGA BOOGA");
+		}
+		else if (mess.includes("julian")&&x==0){
+			if (message.author.bot) return;
+			message.channel.send("Actual Cabbage");
 		}
 		else if (mess.includes("aidan")&&x==0){
 			if (message.author.bot) return;
