@@ -3,7 +3,7 @@ const client = new Discord.Client();
 const cheerio = require("cheerio");
 const request = require("request");
 const YTDL = require("ytdl-core"); 
-var bad = ["fuck", "shit", "bitch", "whore", "ugly", "cunt", "stupid","nigger"];
+var bad = ["fuck", "shit", "bitch", "whore", "ugly", "cunt", "stupid", "nigger"];
 var playlist = [];
 // Configure logger settings
 
@@ -110,7 +110,7 @@ bot.on("message", async message => {
 			"\"Julian's my wife\” - Shashank",
 			"\"Five man fill is a time honoured tradition\” - Teddy",
 			"\"It's for research purposes\" - Chun",
-			"\"no no  no its SHE wears short skirts I WEAR t-shirts SHES cheer captain and IM on the bleachers" "Oh that's love story" "NO it's you belong with me\" - Chun and Julian",
+			"\"no no  no its SHE wears short skirts I WEAR t-shirts SHES cheer captain and IM on the bleachers\" \"Oh that's love story" "NO it's you belong with me\" - Chun and Julian",
 			"\" Nah daddy Keeves was my Daddy\" - Cailyn"
 			];
 			message.channel.send(list[rand]);
