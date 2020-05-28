@@ -79,7 +79,7 @@ bot.on("message", async message => {
 	}
 	else if (mess.includes("chunbot quote")&&x==0){
 			if (message.author.bot) return;
-			var rand=~~(Math.random() * 20);
+			var rand=~~(Math.random() * 24);
 			var list = [
 			"\"Rich people dont have friends, they have assets\" -Chunfeng",
 			"\"There's no way he[rob ford] ges reelected\" -Julian",
@@ -100,7 +100,11 @@ bot.on("message", async message => {
 			"\"Vladimir would suck your period blood\" -Chunfeng",
 			"\"I would smash Xin Zhao\" -Crystal",
 			"\"I would smash, if [Julian] was a girl\” - Shashank",
-			"\“Julian's my wife\” - Shashank"
+			"\"Julian's my wife\” - Shashank",
+			"\"Five man fill is a time honoured tradition\” - Teddy",
+			"\"It's for research purposes\" - Chun",
+			"\"no no  no its SHE wears short skirts I WEAR t-shirts SHES cheer captain and IM on the bleachers" "Oh that's love story" "NO it's you belong with me\" - Chun and Julian",
+			"\" Nah daddy Keeves was my Daddy\" - Cailyn"
 			];
 			message.channel.send(list[rand]);
 		}	
@@ -252,6 +256,12 @@ bot.on("message", async message => {
 					}
 				})
 	        }
+	    }
+	}
+	if (mess.includes("-clear")){
+	    if (message.member.voiceChannel) {
+			playlist.clear();
+			connection.disconnect();
 	    }
 	}
 	// if (mess.includes("-bye")){
