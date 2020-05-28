@@ -32,13 +32,13 @@ bot.on("message", async message => {
 		}
 		if (counter >=1){
 			var randbad=~~(Math.random() * 3);
-			if (randbad==1){
+			if (randbad==0){
 				message.channel.send("Stop swearing bitch");
 			}
-			else if (randbad==2){
+			else if (randbad==1){
 				message.channel.send("Do you kiss your mother with that mouth?");
 			}
-			else if (randbad==3){
+			else if (randbad==2){
 				message.channel.send("Ur just being insecure lol");
 			}
 			counter=0;
