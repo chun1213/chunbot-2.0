@@ -3,7 +3,7 @@ const client = new Discord.Client();
 const cheerio = require("cheerio");
 const request = require("request");
 const YTDL = require("ytdl-core"); 
-var bad = ["fuck", "shit", "bitch", "whore", "ugly", "cunt", "stupid"];
+var bad = ["fuck", "shit", "bitch", "whore", "ugly", "cunt", "stupid","nigger"];
 var playlist = [];
 // Configure logger settings
 
@@ -31,18 +31,25 @@ bot.on("message", async message => {
 			}
 		}
 		if (counter >=1){
-			message.channel.send("Stop swearing bitch");
+			var randbad=~~(Math.random() * 3);
+			if (randbad==1){
+				message.channel.send("Stop swearing bitch");
+			}
+			else if (randbad==2){
+				message.channel.send("Do you kiss your mother with that mouth?");
+			}
+			else if (randbad==3){
+				message.channel.send("Ur just being insecure lol");
+			}
 			counter=0;
 		}
 	}
 	if (mess.includes("chunbot update")&& x==0){
 		if (message.author.bot) return;
-		message.channel.send("Welcome to the Febuary update for Chunbot!");
-		message.channel.send("Valentines day is cool is guess");
-		message.channel.send("New features include:");
-		message.channel.send("more Quotes!");
-		//message.channel.send("Matchmaking!");
-		message.channel.send("Chun's being a lazy bitch so this not a big update");
+		message.channel.send("Welcome to the early June update for Chunbot!");
+		message.channel.send("Chun's is finally gonna start updating again to add more useless shit");
+		message.channel.send("Theres some new quotes, but spam them in shitposts and memes or i'll be big sad");
+		message.channel.send("Oh yeah and the banned word list was updated");
 	}
 	else if (mess.includes("chunbot stop")&& x==0){
 		if (message.author.bot) return;
