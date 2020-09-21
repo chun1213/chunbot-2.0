@@ -15,8 +15,9 @@ const bot = new Discord.Client({disableEveryone: true});
 bot.on('ready', async () => {
     console.log(`${bot.user.username} is online!`)
 });
-botsearch = GphApiClient(process.env.giphy-token)
 bot.login(process.env.token);
+botsearch = GphApiClient(process.env.giphy);
+
 var x=0;
 var counter=0;
 bot.on("message", async message => {
