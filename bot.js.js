@@ -70,7 +70,7 @@ bot.on("message", async message => {
 	else if (mess.includes("chunbot search")&& x==0){
 		if (message.author.bot) return;
 		var parts=message.content.split(" ");
-		word=parts.slice(2);
+		word=parts.slice(2).join();
 		botsearch.search('gifs', {"q": word})
 		.then((response) => {
 			console.log(response);
