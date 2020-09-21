@@ -76,7 +76,7 @@ bot.on("message", async message => {
 			console.log(response);
 			var totalResponses = response.data.length;
             var responseIndex = Math.floor(Math.random() * 10 + 1) % totalResponses;
-            var responseFinal = response.data[0];
+            var responseFinal = response.data[responseIndex];
 		 
 		message.channel.send({files: [responseFinal.images.fixed_height.url]});
 		})
