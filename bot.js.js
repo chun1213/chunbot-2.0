@@ -3,6 +3,7 @@ const client = new Discord.Client();
 const cheerio = require("cheerio");
 const request = require("request");
 const YTDL = require("ytdl-core"); 
+import { GiphyFetch } from '@giphy/js-fetch-api'
 var bad = ["fuck", "shit", "bitch", "whore", "ugly", "cunt", "stupid", "nigger"];
 var playlist = [];
 // Configure logger settings
@@ -15,6 +16,7 @@ bot.on('ready', async () => {
 });
 
 bot.login(process.env.token);
+const gf = new GiphyFetch('SVK93T0YIndjmUdpEI6FA8EX7GN1qRST')
 var x=0;
 var counter=0;
 bot.on("message", async message => {
@@ -30,6 +32,7 @@ bot.on("message", async message => {
 				counter=1;
 			}
 		}
+		
 		if (counter >=1){
 			var randbad=~~(Math.random() * 3);
 			if (randbad==0){
@@ -46,10 +49,10 @@ bot.on("message", async message => {
 	}
 	if (mess.includes("chunbot update")&& x==0){
 		if (message.author.bot) return;
-		message.channel.send("Welcome to the early June update for Chunbot!");
+		message.channel.send("Welcome to the early September update for Chunbot!");
 		message.channel.send("Chun's is finally gonna start updating again to add more useless shit");
-		message.channel.send("Theres some new quotes, but spam them in shitposts and memes or i'll be big sad");
-		message.channel.send("Oh yeah and the banned word list was updated");
+		message.channel.send("Univercity is a bitch");
+		message.channel.send(const { data: gifs } = await gf.search('dogs', { sort: 'relevant', lang: 'es', limit: 10, type: 'stickers' }));
 	}
 	else if (mess.includes("chunbot stop")&& x==0){
 		if (message.author.bot) return;
@@ -58,22 +61,16 @@ bot.on("message", async message => {
 		x=1;
 	}
 	
-	else if (mess.includes("chunbot search")&& x==0){
-		if (message.author.bot) return;
-		var parts=message.content.split(" ");
-		word=parts.slice(1).join(" ");
-		image(message,word);
-		return;
-		
-	}
+	
 	else if (mess.includes("chunbot help") && x==0) {
 		if (message.author.bot) return;
-		message.channel.send("Did you honestly think I would put a help menu, figure the commands out libtard :Soviet: ");
+		message.channel.send("Did you honestly think I would put a help menu, figure the commands out libtard");
 	}
 	else if (mess.includes("chunbot eula")&&x==0) {
 	if (message.author.bot) return;
 	message.channel.send("Chun is not reponsible for the actions and or negative effects/side-effects of chunbot");
 	}
+	
 	else if (mess.includes("chunbot")&& x==1){
 		message.channel.send("Im BACK!", {files: ["./images/minion.jpg"]});
 		x=0;
@@ -319,40 +316,4 @@ function Play(connection){
 	
 
 
-function image(message){
-	var search=word;
-	var options ={
-		url: "http://results.dogpile.com/serp?qc=images&q=" + search,
-		method: "GET",
-		headers: {
-			"Accept": "text/html",
-			"User-Agent": "Chrome"
-		}
-	};
-	request(options, function(error, response, responseBody) {
-        if (error) {
-            // handle error
-            return;
-        }
- 
-        /* Extract image URLs from responseBody using cheerio */
- 
-        $ = cheerio.load(responseBody); // load responseBody into cheerio (jQuery)
- 
-        // In this search engine they use ".image a.link" as their css selector for image links
-        var links = $(".image a.link");
- 
-        // We want to fetch the URLs not the DOM nodes, we do this with jQuery's .attr() function
-        // this line might be hard to understand but it goes thru all the links (DOM) and stores each url in an array called urls
-        var urls = new Array(links.length).fill(0).map((v, i) => links.eq(i).attr("href"));
-        console.log(urls);
-        if (!urls.length) {
-            // Handle no results
-            return;
-        }
- 
-        // Send result
-        message.channel.send( urls[~~(Math.random() * 10)] );
-    });
- 
-}
+
