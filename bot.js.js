@@ -2,29 +2,45 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const cheerio = require("cheerio");
 const request = require("request");
-const YTDL = require("ytdl-core"); 
+const YTDL = require("ytdl-core-discord"); 
+var search = require('youtube-search');
+
 var GphApiClient = require('giphy-js-sdk-core')
 
 var bad = ["fuck", "shit", "bitch", "whore", "ugly", "cunt", "stupid", "nigger"];
 var playlist = [];
 // Configure logger settings
 
-
 // Initialize Discord Bot
+
 const bot = new Discord.Client({disableEveryone: true});
 bot.on('ready', async () => {
     console.log(`${bot.user.username} is online!`)
 });
+botsearch = GphApiClient(process.env.giphy)
 bot.login(process.env.token);
-botsearch = GphApiClient(process.env.giphy);
-
 var x=0;
 var counter=0;
+var opts = {
+  maxResults: 10,
+  key: process.env.youtube
+};
+var word="despacito";
+console.log('logged in');
+
 bot.on("message", async message => {
 	console.log('logged in');
     // Our bot needs to know if it will execute a command
     // It will listen for messages that will start with `!`
 	var mess=message.content.toLowerCase();
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -70,7 +86,7 @@ bot.on("message", async message => {
 	else if (mess.includes("chunbot search")&& x==0){
 		if (message.author.bot) return;
 		var parts=message.content.split(" ");
-		word=parts.slice(2).join();
+		word=parts.slice(1).join(" ");
 		botsearch.search('gifs', {"q": word})
 		.then((response) => {
 			console.log(response);
@@ -274,15 +290,25 @@ bot.on("message", async message => {
 	    if (message.member.voiceChannel) {
 	        if (!message.guild.voiceChannel) {
 	            message.member.voiceChannel.join()
-				.then(connection =>{
+				.then( connection  =>{
 					
 					var parts=message.content.split(" ");
-					var word=parts.slice(1).toString();
-					playlist.push(word);
-					if (playlist.length==1){
-						Play(connection);
-					}
-				})
+					word=parts.slice(1,parts.length).toString();
+					console.log(word);
+					const video = search(word, opts, function(err, results) {
+							if(err)  console.log(err);
+							console.log(word);
+							playlist.push(results[0].link);
+							
+							console.dir(results[0].link);
+							if (playlist.length==1){
+							play(connection)
+							}	
+						});
+					
+					
+				}).catch(e => { console.log(e) });
+				
 	        }
 	    }
 	}
@@ -311,6 +337,7 @@ bot.on("message", async message => {
 			}
 		}
 	}
+	
 });
 function shuffleArray(array) {
     for (var i = array.length - 1; i > 0; i--) {
@@ -320,8 +347,26 @@ function shuffleArray(array) {
         array[j] = temp;
     }
 }
+async function play(connection) {
+  connection.playOpusStream(await YTDL(playlist[0])).on("end",function(){
+		playlist.shift();
+		
+		console.log("beans");
+		if (playlist[0]){
+			Play(connection);
+		}
+		else{
+			connection.disconnect();
+			
+		}	
+		
+		
+	})
+}
+
+	
 function Play(connection){
-	connection.playStream(YTDL(playlist[0], {filter: "audioonly"})).on("end",function(){
+	connection.playStream(YTDL('https://www.youtube.com/watch?v=XCX1X3qsc0Q', {filter: "audioonly"})).on("end",function(){
 		playlist.shift();
 		
 		console.log("beans");
@@ -340,40 +385,4 @@ function Play(connection){
 	
 
 
-function image(message){
-	var search=word;
-	var options ={
-		url: "http://results.dogpile.com/serp?qc=images&q=" + search,
-		method: "GET",
-		headers: {
-			"Accept": "text/html",
-			"User-Agent": "Chrome"
-		}
-	};
-	request(options, function(error, response, responseBody) {
-        if (error) {
-            // handle error
-            return;
-        }
- 
-        /* Extract image URLs from responseBody using cheerio */
- 
-        $ = cheerio.load(responseBody); // load responseBody into cheerio (jQuery)
- 
-        // In this search engine they use ".image a.link" as their css selector for image links
-        var links = $(".image a.link");
- 
-        // We want to fetch the URLs not the DOM nodes, we do this with jQuery's .attr() function
-        // this line might be hard to understand but it goes thru all the links (DOM) and stores each url in an array called urls
-        var urls = new Array(links.length).fill(0).map((v, i) => links.eq(i).attr("href"));
-        console.log(urls);
-        if (!urls.length) {
-            // Handle no results
-            return;
-        }
- 
-        // Send result
-        message.channel.send( urls[~~(Math.random() * 10)] );
-    });
- 
-}
+
