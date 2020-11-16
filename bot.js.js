@@ -289,7 +289,7 @@ bot.on("message", async message => {
 	if (mess.includes("-cb")){
 	    if (message.member.voiceChannel) {
 	        
-	            message.member.voiceChannel.join()
+	            message.member.voiceChannel.join().catch(e => {console.error(e)})
 				.then( connection  =>{
 					
 					var parts=message.content.split(" ");
