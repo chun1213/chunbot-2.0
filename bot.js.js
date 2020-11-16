@@ -288,7 +288,7 @@ bot.on("message", async message => {
 	// }
 	if (mess.includes("-cb")){
 	    if (message.member.voiceChannel) {
-	        if (!message.guild.voiceChannel) {
+	        
 	            message.member.voiceChannel.join()
 				.then( connection  =>{
 					
@@ -309,7 +309,7 @@ bot.on("message", async message => {
 					
 				}).catch(e => { console.log(e) });
 				
-	        }
+	        
 	    }
 	}
 	if (mess.includes("-clear")){
