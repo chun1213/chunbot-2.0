@@ -7,6 +7,7 @@ var search = require('youtube-search');
 
 var GphApiClient = require('giphy-js-sdk-core')
 
+//Bad words 
 var bad = ["fuck", "shit", "bitch", "whore", "ugly", "cunt", "stupid", "nigger"];
 var playlist = [];
 // Configure logger settings
@@ -58,7 +59,7 @@ bot.on("message", async message => {
 		if (counter >=1){
 			var randbad=~~(Math.random() * 3);
 			if (randbad==1){
-				message.channel.send("Stop swearing bitch");
+				message.channel.send("Stop swearing boi");
 			}
 			else if (randbad==2){
 				message.channel.send("Do you kiss your mother with that mouth?");
@@ -121,6 +122,7 @@ bot.on("message", async message => {
 	
 	
 	}
+	
 	else if (mess.includes("chunbot quote")&&x==0){
 			if (message.author.bot) return;
 			var rand=~~(Math.random() * 24);
@@ -154,7 +156,7 @@ bot.on("message", async message => {
 		}	
 	else if (mess.includes("chunbot")&&x==0) {
 		if (message.author.bot) return;
-		var rand=~~(Math.random() * 4);
+		var rand=~~(Math.random() * 3);
 		if (rand==1){
 		message.channel.send("heard you called", {files: ["./images/sans.png"]});
 		}
@@ -167,25 +169,20 @@ bot.on("message", async message => {
 		word="Kirby";
 		image(message,word);
 		message.channel.send("Hi!");
-		}
-		if (rand==3){
-		word="Minion";
-		image(message,word);
-		message.channel.send("IMMA EAT YO ASS!");
-		}
+		}	
 		
 	}
 	else if (mess.includes("chun")&& x==0) {
 		
 		if (message.author.bot) return;
 		if (rand==1){
-		message.channel.send("fake news libtard");
+		message.channel.send("fake news ");
 		}
 		else if (rand==2){
 		message.channel.send("Shut up");
 		}
 		if (rand==0){
-		message.channel.send("fucking hell just @ him");
+		message.channel.send("just @ him");
 		}
 		
 		
@@ -197,7 +194,7 @@ bot.on("message", async message => {
 			if (message.author.bot) return;
 			var rand=~~(Math.random() * 6);
 			if (rand==1){
-			message.channel.send("League is gay lol");
+			message.channel.send("League is bad");
 			}
 			if (rand==2){
 			message.channel.send("GLORY TO SHURIMA");
@@ -220,10 +217,6 @@ bot.on("message", async message => {
 		else if ((mess.includes("creeper")) && x==0) {
 			if (message.author.bot) return;
 			message.channel.send("AW MAN");
-		}
-		else if (mess.includes("owo") && x==0) {
-			if (message.author.bot) return;
-			message.channel.send("notices bulge OwO whats this? Rawr x3 nuzzles how are you pounces on you you're so warm o3o notices you have a bulge o: someone's happy ;) ");
 		}
 		
 		
@@ -289,7 +282,7 @@ bot.on("message", async message => {
 	if (mess.includes("-cb")){
 	    if (message.member.voiceChannel) {
 	        
-	            message.member.voiceChannel.join().catch(e => {console.error(e)})
+	            message.member.voiceChannel.join()
 				.then( connection  =>{
 					
 					var parts=message.content.split(" ");
