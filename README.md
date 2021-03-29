@@ -1,5 +1,5 @@
 # chunbot 2.0
  
 Its a bot I made for my personal discord server
-Responds to certain keywords and the word chunbot
-All comments it makes are purely satirical and do not reflect the opinions of it's creator
+Here are some images that I have taken over the past 2 years of chunbot's shenanigans
+![plot](https://github.com/chun1213/chunbot-2.0/tree/master/images/screenshot2.jpg)
