@@ -2,7 +2,7 @@
  
 Its a bot I made for my personal discord server
 Here are some images that I have taken over the past 2 years of chunbot's shenanigans
-![plot](https://github.com/chun1213/chunbot-2.0/tree/master/images/Screenshot_2.png)
+![plot](/images/Screenshot_2.png?raw=true "Title")
 Use of Giphy API:
 ![plot](https://github.com/chun1213/chunbot-2.0/tree/master/images/Screenshot_1.png)
 The amount of use and mentions of the bot are insane:
