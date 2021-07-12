@@ -39,7 +39,10 @@ bot.on("message", async message => {
 	
 	
 	
-	
+	var channel=message.channel.get(channelid)
+	if (channel==="chunbot-poopposts" && mess.includes("generate")){
+		message.channel.send("test1");
+	}
 	
 	
 	
